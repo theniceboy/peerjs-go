@@ -94,15 +94,15 @@ func main() {
 	serverOptions.Port = 9000
 	serverOptions.Host = "0.0.0.0"
 	serverOptions.LogLevel = "info"
-	serverOptions.ExpireTimeout = 5000,
-	serverOptions.AliveTimeout = 60000,
+	serverOptions.ExpireTimeout = 5000
+	serverOptions.AliveTimeout = 60000
 	serverOptions.Key = "peerjs"
 	serverOptions.Path = "/"
-	serverOptions.ConcurrentLimit = 5000,
+	serverOptions.ConcurrentLimit = 5000
 	serverOptions.AllowDiscovery = false
-	serverOptions.CleanupOutMsgs = 1000,
+	serverOptions.CleanupOutMsgs = 1000
 
-	server := peerjsServer.New(serverOptions)
+	server := peerServer.New(serverOptions)
 	defer server.Stop()
 
 	if err := server.Start(); err != nil {
